@@ -3,19 +3,26 @@
 [TheCocktailDB](https://thecocktaildb.com/) has an [API](https://thecocktaildb.com/api.php) that provides over 500 cocktail recipes in JSON format. While the API is great for many projects, some purposes are better served by an offline version of the data. **This project fetches data from TheCocktailDB for offline use.**
 
 # How to get the data?
-If you just want a dump, download [drinks.js](https://raw.githubusercontent.com/lauriharpf/thecocktaildb-downloader/master/drinks.js). It has a JavaScript array of all of the drinks from TheCocktailDB as JSON objects in pretty-printed format. The data was returned by TheCocktailDB on 4th of September, 2018. Please [support TheCocktailDB](https://www.patreon.com/thedatadb) when using the data for commercial purposes.
+For most uses, here are dumps of the data returned by TheCocktailDB API on 4th of September, 2018:
 
-### Getting fresh data
-If drinks.js is too old for you, run the downloader to produce a fresh file. On Linux/Unix (including MacOS):
+|File|Content|
+|----|-------|
+|**[drinks.js](https://raw.githubusercontent.com/lauriharpf/thecocktaildb-downloader/master/drinks.js)**|JavaScript array of all of the cocktails as JSON objects. Also see [example of using drinks.js at CodeSandbox](https://codesandbox.io/s/6wql1zz9on). 
+|**[drinks.sql](https://raw.githubusercontent.com/lauriharpf/thecocktaildb-downloader/master/drinks.sql)**|Same data in SQL format; a CREATE TABLE statement and INSERT statements for each cocktail.
 
-1. Download fetchcocktails.bash and place it to an empty directory in your system
+Please [support TheCocktailDB](https://www.patreon.com/thedatadb) when using the data for commercial purposes.
+
+# Getting fresh data
+If the above files are too old for you, run the downloader to produce a fresh file. On Linux/Unix (including MacOS):
+
+1. Download [fetchcocktails.bash](https://raw.githubusercontent.com/lauriharpf/thecocktaildb-downloader/master/fetchcocktails.bash) and place it to an empty directory in your system
 2. Make the file executable: `chmod 744 fetchcocktails.bash`
 3. Run it: `./fetchcocktails.bash`
 
 On Windows, first install [Cygwin](http://www.cygwin.com/) to allow running bash scripts. Alternatively, [Git BASH](https://gitforwindows.org/) works if you also [install Wget](https://gist.github.com/evanwill/0207876c3243bbb6863e65ec5dc3f058).
 
-# Using the data as-is or converting it to SQL
-See [example of using drinks.js at CodeSandbox](https://codesandbox.io/s/6wql1zz9on). If you'd rather have the data in SQL format, download the [drinks.sql](https://raw.githubusercontent.com/lauriharpf/thecocktaildb-downloader/master/drinks.sql) file from the repository. It has been created from the drinks.js file with these steps:
+## Converting drinks.js to SQL
+If you'd rather have the data in SQL format, perform these steps after running `fetchcocktails.bash`:
 
 1. Open drinks.js with a text editor.
 2. Remove `let drinks = ` from the beginning of the file
