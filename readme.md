@@ -3,7 +3,7 @@
 [TheCocktailDB](https://thecocktaildb.com/) has an [API](https://thecocktaildb.com/api.php) that provides over 500 cocktail recipes in JSON format. While the API is great for many projects, some purposes are better served by an offline version of the data. **This project fetches data from TheCocktailDB for offline use.**
 
 # How to get the data?
-For most uses, here are dumps of the data returned by TheCocktailDB API on 4th of September, 2018:
+For most uses, here are dumps of the data returned by TheCocktailDB API on 20th of June, 2019:
 
 |File|Content|
 |----|-------|
