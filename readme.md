@@ -1,9 +1,9 @@
 # TheCocktailDB Downloader
 
-[TheCocktailDB](https://thecocktaildb.com/) has an [API](https://thecocktaildb.com/api.php) that provides over 500 cocktail recipes in JSON format. While the API is great for many projects, some purposes are better served by an offline version of the data. **This project fetches data from TheCocktailDB for offline use.**
+[TheCocktailDB](https://thecocktaildb.com/) [API](https://thecocktaildb.com/api.php) offers over 500 cocktail recipes in JSON format. The API is great for many projects, but some need an offline version of the data. **This project fetches data from TheCocktailDB for offline use.**
 
 # How to get the data?
-For most uses, here are dumps of the data returned by TheCocktailDB API on 20th of June, 2019:
+For most uses, here are dumps of the data returned by TheCocktailDB API on 2nd of January, 2020:
 
 |File|Content|
 |----|-------|
@@ -34,4 +34,4 @@ If you'd rather have the data in SQL format, perform these steps after running `
 Both are welcome, just open an issue.
 
 # Projects using this data
-As far as I know, only [Cocktails World](https://github.com/lauriharpf/cocktails) by yours truly. If you've built a public project with this data and want the project mentioned here, [give me a heads-up](https://github.com/lauriharpf).
+As far as I know, only [Cocktails World](https://github.com/lauriharpf/cocktails) by yours truly. If you've built a public project with this data and want the project mentioned here, make a PR.
