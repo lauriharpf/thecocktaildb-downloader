@@ -5,7 +5,8 @@
   "main": "./dist/index.ts",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "build": "tsc",
+    "start": "ts-node src/downloader/index.ts"
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.9",

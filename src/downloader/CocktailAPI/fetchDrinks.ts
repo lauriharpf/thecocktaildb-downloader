@@ -5,22 +5,39 @@ import {
   LookupResponse,
   lookupResponseSchema,
 } from "./cocktailApiTypes";
+import { knownDrinkIds } from "./knownDrinkIds";
 
 export const fetchDrinks = async (): Promise<Drink[]> => {
-  const firstId = 11000;
-  const howMany = 8000;
+  const drinkIdsToFetch = determineDrinkIdsToFetch();
+  return fetchDrinksOneByOneToPreventApiOverload(drinkIdsToFetch);
+};
+
+const determineDrinkIdsToFetch = (): number[] => {
+  const lastKnownDrinkId = knownDrinkIds[knownDrinkIds.length - 1];
+  const firstPotentialDrinkId = lastKnownDrinkId + 1;
+  const numberOfPotentialIdsToCheck = 1000;
+  const potentialNewDrinkIds = [...Array(numberOfPotentialIdsToCheck)].map(
+    (_value, index) => firstPotentialDrinkId + index
+  );
+  const drinkIdsToFetch = knownDrinkIds.concat(potentialNewDrinkIds);
+  return drinkIdsToFetch;
+};
+
+const fetchDrinksOneByOneToPreventApiOverload = async (
+  allDrinkIds: number[]
+): Promise<Drink[]> => {
   const bar = new ProgressBar(
     "Fetching :bar :current/:total (:percent) ETA: :eta",
-    howMany
+    allDrinkIds.length
   );
 
   const drinks: Drink[] = [];
-  for (let id = firstId; id < firstId + howMany; id++) {
-    const drink = await fetchDrink(id);
+  for (const drinkId of allDrinkIds) {
+    const drink = await fetchDrink(drinkId);
+    bar.tick();
     if (drink) {
       drinks.push(drink);
     }
-    bar.tick();
   }
 
   return drinks;
