@@ -9,7 +9,9 @@
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.9",
+    "@types/progress": "^2.0.3",
     "node-fetch": "^2.6.1",
+    "progress": "^2.0.3",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3",
     "zod": "^3.0.0-alpha.33"
