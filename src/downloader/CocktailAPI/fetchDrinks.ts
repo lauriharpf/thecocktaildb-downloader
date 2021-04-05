@@ -1,10 +1,6 @@
 import ProgressBar from "progress";
 import fetch from "node-fetch";
-import {
-  Drink,
-  LookupResponse,
-  lookupResponseSchema,
-} from "./cocktailApiTypes";
+import { Drink } from "../../../thecocktaildb/src/types";
 import { knownDrinkIds } from "./knownDrinkIds";
 
 export const fetchDrinks = async (): Promise<Drink[]> => {
@@ -46,13 +42,6 @@ const fetchDrinksOneByOneToPreventApiOverload = async (
 const fetchDrink = async (id: number): Promise<Drink | undefined> => {
   const apiUrl = "https://www.thecocktaildb.com/api/json/v1/1";
   const result = await fetch(`${apiUrl}/lookup.php?i=${id}`);
-  try {
-    const lookupResponse: LookupResponse = lookupResponseSchema.parse(
-      await result.json()
-    );
-    return lookupResponse.drinks ? lookupResponse.drinks[0] : undefined;
-  } catch (e) {
-    console.log(e);
-    return undefined;
-  }
+  const json = await result.json();
+  return json.drinks ? json.drinks[0] : undefined;
 };

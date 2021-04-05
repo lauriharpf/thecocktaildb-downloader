@@ -1,11 +1,11 @@
 import * as fs from "fs";
-import { Drink } from "./CocktailAPI/cocktailApiTypes";
+import { Drink } from "../../thecocktaildb/src/types";
 
 export const writeToDisk = (drinks: Drink[]): void => {
   const drinksFile = fs.createWriteStream(
-    "src/thecocktaildb/generated/drinks.ts"
+    "thecocktaildb/src/generated/drinks.ts"
   );
-  drinksFile.write('import { Drink } from "../drinkInterface";\n');
+  drinksFile.write('import { Drink } from "../types";\n');
   drinksFile.write("\n");
   drinksFile.write(
     `export const drinks: Drink[] = ${JSON.stringify(drinks, null, 2)}`

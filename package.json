@@ -1,8 +1,8 @@
 {
-  "name": "thecocktaildb",
+  "name": "thecocktaildb-downloader",
   "version": "1.0.0",
   "description": "TheCocktailDB.com data for offline use",
-  "main": "./dist/index.ts",
+  "main": "./build/src/downloader/index.js",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
@@ -14,7 +14,6 @@
     "node-fetch": "^2.6.1",
     "progress": "^2.0.3",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.3",
-    "zod": "^3.0.0-alpha.33"
+    "typescript": "^4.2.3"
   }
 }

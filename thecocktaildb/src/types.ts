@@ -1,64 +1,74 @@
+export type CreativeCommonsConfirmed = "Yes" | "No";
+
+export type Alcoholic = "Alcoholic" | "Non alcoholic" | "Optional alcohol";
+
+export type IBA = "Contemporary Classics" | "Unforgettables" | "New Era Drinks";
+
+export type Category =
+  | "Ordinary Drink"
+  | "Cocktail"
+  | "Milk / Float / Shake"
+  | "Other/Unknown"
+  | "Cocoa"
+  | "Shot"
+  | "Coffee / Tea"
+  | "Homemade Liqueur"
+  | "Punch / Party Drink"
+  | "Beer"
+  | "Soft Drink / Soda";
+
+export type Glass =
+  | "Highball glass"
+  | "Cocktail glass"
+  | "Old-fashioned glass"
+  | "Whiskey Glass"
+  | "Collins glass"
+  | "Pousse cafe glass"
+  | "Champagne flute"
+  | "Whiskey sour glass"
+  | "Cordial glass"
+  | "Brandy snifter"
+  | "White wine glass"
+  | "Nick and Nora Glass"
+  | "Hurricane glass"
+  | "Coffee mug"
+  | "Shot glass"
+  | "Jar"
+  | "Irish coffee cup"
+  | "Punch bowl"
+  | "Pitcher"
+  | "Pint glass"
+  | "Copper Mug"
+  | "Wine Glass"
+  | "Beer mug"
+  | "Margarita/Coupette glass"
+  | "Beer pilsner"
+  | "Beer Glass"
+  | "Parfait glass"
+  | "Mason jar"
+  | "Margarita glass"
+  | "Martini Glass"
+  | "Balloon Glass"
+  | "Coupe Glass"
+  | "Cocktail Glass"
+  | "Collins Glass"
+  | "Highball Glass"
+  | "Coffee Mug"
+  | "Punch Bowl"
+  | "Shot Glass"
+  | "Champagne Flute"
+  | "Old-Fashioned glass";
+
 export interface Drink {
   idDrink: string;
   strDrink: string;
   strDrinkAlternate: string | null;
   strTags: string | null;
   strVideo: string | null;
-  strCategory:
-    | "Ordinary Drink"
-    | "Cocktail"
-    | "Milk / Float / Shake"
-    | "Other/Unknown"
-    | "Cocoa"
-    | "Shot"
-    | "Coffee / Tea"
-    | "Homemade Liqueur"
-    | "Punch / Party Drink"
-    | "Beer"
-    | "Soft Drink / Soda";
-  strIBA: "Contemporary Classics" | "Unforgettables" | "New Era Drinks" | null;
-  strAlcoholic: "Alcoholic" | "Non alcoholic" | "Optional alcohol";
-  strGlass:
-    | "Highball glass"
-    | "Cocktail glass"
-    | "Old-fashioned glass"
-    | "Whiskey Glass"
-    | "Collins glass"
-    | "Pousse cafe glass"
-    | "Champagne flute"
-    | "Whiskey sour glass"
-    | "Cordial glass"
-    | "Brandy snifter"
-    | "White wine glass"
-    | "Nick and Nora Glass"
-    | "Hurricane glass"
-    | "Coffee mug"
-    | "Shot glass"
-    | "Jar"
-    | "Irish coffee cup"
-    | "Punch bowl"
-    | "Pitcher"
-    | "Pint glass"
-    | "Copper Mug"
-    | "Wine Glass"
-    | "Beer mug"
-    | "Margarita/Coupette glass"
-    | "Beer pilsner"
-    | "Beer Glass"
-    | "Parfait glass"
-    | "Mason jar"
-    | "Margarita glass"
-    | "Martini Glass"
-    | "Balloon Glass"
-    | "Coupe Glass"
-    | "Cocktail Glass"
-    | "Collins Glass"
-    | "Highball Glass"
-    | "Coffee Mug"
-    | "Punch Bowl"
-    | "Shot Glass"
-    | "Champagne Flute"
-    | "Old-Fashioned glass";
+  strCategory: Category;
+  strIBA: IBA | null;
+  strAlcoholic: Alcoholic;
+  strGlass: Glass;
   strInstructions: string;
   strInstructionsES: string | null;
   strInstructionsDE: string | null;
@@ -99,6 +109,6 @@ export interface Drink {
   strMeasure15: string | null;
   strImageSource: string | null;
   strImageAttribution: string | null;
-  strCreativeCommonsConfirmed: "Yes" | "No";
+  strCreativeCommonsConfirmed: CreativeCommonsConfirmed;
   dateModified: string | null;
 }

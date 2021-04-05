@@ -1,4 +1,4 @@
-import { Drink } from "../drinkInterface";
+import { Drink } from "../types";
 
 export const drinks: Drink[] = [
   {

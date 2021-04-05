@@ -1,4 +1,4 @@
-import { Drink } from "./CocktailAPI/cocktailApiTypes";
+import { Drink } from "../../thecocktaildb/src/types";
 import { fetchDrinks } from "./CocktailAPI/fetchDrinks";
 import { writeToDisk } from "./writeToDisk";
 
