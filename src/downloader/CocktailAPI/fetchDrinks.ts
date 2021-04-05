@@ -23,7 +23,7 @@ const fetchDrinksOneByOneToPreventApiOverload = async (
   allDrinkIds: number[]
 ): Promise<Drink[]> => {
   const bar = new ProgressBar(
-    "Fetching :bar :current/:total (:percent) ETA: :eta",
+    "Fetching drinks :bar :current/:total (:percent) ETA: :eta",
     allDrinkIds.length
   );
 
