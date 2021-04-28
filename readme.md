@@ -1,3 +1,5 @@
+![Build](https://github.com/lauriharpf/thecocktaildb-downloader/actions/workflows/node.js.yml/badge.svg)
+
 # TheCocktailDB Downloader
 
 [TheCocktailDB](https://thecocktaildb.com/) [API](https://thecocktaildb.com/api.php) offers over 500 drink recipes in JSON format. The API is great for many projects, but some need an offline version of the data. **This project fetches data from TheCocktailDB for offline use.**
