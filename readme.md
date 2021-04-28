@@ -4,12 +4,12 @@
 
 # How to get the data?
 
-For most uses, here are dumps of the data returned by TheCocktailDB API on the 5th of April, 2021:
+For most uses, here are dumps of the data returned by TheCocktailDB API on the 28th of April, 2021:
 
-| File                                                                                                                                               | Content                                    |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| **[drinks.ts](https://raw.githubusercontent.com/lauriharpf/thecocktaildb-downloader/typescript-master/thecocktaildb/src/generated/drinks.ts)**     | TypeScript array of all of the drinks.     |
-| **[thecocktaildb-images/generated](https://github.com/lauriharpf/thecocktaildb-downloader/tree/typescript-master/thecocktaildb-images/generated)** | All of the thumbnail images of the drinks. |
+| File                                                                                                                                    | Content                                    |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| **[drinks.ts](https://raw.githubusercontent.com/lauriharpf/thecocktaildb-downloader/master/thecocktaildb/src/generated/drinks.ts)**     | TypeScript array of all of the drinks.     |
+| **[thecocktaildb-images/generated](https://github.com/lauriharpf/thecocktaildb-downloader/tree/master/thecocktaildb-images/generated)** | All of the thumbnail images of the drinks. |
 
 Please [support TheCocktailDB](https://www.patreon.com/thedatadb) when using the data for commercial purposes.
 
