@@ -1,0 +1,19 @@
+{
+  "name": "thecocktaildb-downloader",
+  "version": "1.0.0",
+  "description": "TheCocktailDB.com data for offline use",
+  "main": "./build/src/downloader/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/downloader/index.ts"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.9",
+    "@types/progress": "^2.0.3",
+    "node-fetch": "^2.6.1",
+    "progress": "^2.0.3",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "thecocktaildb",
+  "version": "0.0.1",
+  "description": "TheCocktailDB.com data for offline use",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "release": "np"
+  },
+  "author": "",
+  "devDependencies": {
+    "np": "^7.4.0",
+    "typescript": "^4.2.3"
+  },
+  "np": {
+    "preview": true
+  }
+}
