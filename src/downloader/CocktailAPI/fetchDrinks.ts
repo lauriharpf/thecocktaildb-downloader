@@ -2,6 +2,7 @@ import ProgressBar from "progress";
 import fetch from "node-fetch";
 import { Drink } from "../../../thecocktaildb/src/types";
 import { knownDrinkIds } from "./knownDrinkIds";
+import { downloadThumbnailImage } from "./downloadThumbnailImage";
 
 export const fetchDrinks = async (): Promise<Drink[]> => {
   const drinkIdsToFetch = determineDrinkIdsToFetch();
@@ -43,5 +44,27 @@ const fetchDrink = async (id: number): Promise<Drink | undefined> => {
   const apiUrl = "https://www.thecocktaildb.com/api/json/v1/1";
   const result = await fetch(`${apiUrl}/lookup.php?i=${id}`);
   const json = await result.json();
-  return json.drinks ? json.drinks[0] : undefined;
+
+  if (!json.drinks) {
+    return undefined;
+  }
+
+  const drink: Drink = json.drinks[0];
+  if (drink.strDrinkThumb) {
+    const extension = drink.strDrinkThumb.substring(
+      drink.strDrinkThumb.lastIndexOf(".")
+    );
+    const thumbnailFilename =
+      `${drink.idDrink}-${drink.strDrink}`
+        .replace(/[^a-z0-9]/gi, "_")
+        .toLowerCase() + extension;
+    try {
+      await downloadThumbnailImage(drink.strDrinkThumb, thumbnailFilename);
+      drink.thumbnailFilename = thumbnailFilename;
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  return drink;
 };
