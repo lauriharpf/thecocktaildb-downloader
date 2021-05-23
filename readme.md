@@ -8,16 +8,16 @@
 
 For most uses, here are dumps of the data returned by TheCocktailDB API on the 23rd of May, 2021:
 
-| File                                                                                                                                    | Content                                    |
-| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| **[drinks.ts](https://raw.githubusercontent.com/lauriharpf/thecocktaildb-downloader/master/thecocktaildb/src/generated/drinks.ts)**     | TypeScript array of all of the drinks.     |
-| **[thecocktaildb-images/generated](https://github.com/lauriharpf/thecocktaildb-downloader/tree/master/thecocktaildb-images/generated)** | All of the thumbnail images of the drinks. |
+| Directory                                                                                                                           | Content                                                                                                                  |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **[without-images](https://github.com/lauriharpf/thecocktaildb-downloader/tree/master/thecocktaildb/src/generated/without-images)** | TypeScript typing (`types.ts`) and an array of all of the drinks (`drinks.ts`).                                          |
+| **[with-images](https://github.com/lauriharpf/thecocktaildb-downloader/tree/master/thecocktaildb/src/generated/with-images)**       | As above, but includes images of the drinks. The `thumbnailFilename` property in the drink points to the matching image. |
 
 Please [support TheCocktailDB](https://www.patreon.com/thedatadb) when using the data for commercial purposes.
 
 # Getting fresh data
 
-If the above files are too old for you, run the downloader to produce a fresh file:
+If the above data is too old for you, run the downloader to get fresh data:
 
 1. Install [Node.js](https://nodejs.org/en/) and [Yarn](https://classic.yarnpkg.com/en/docs/install)
 1. `yarn` in the root project directory to fetch all dependencies
@@ -31,7 +31,7 @@ If you'd rather have the data in SQL format, perform these steps after running t
 2. Remove the following from the beginning of the file:
 
 ```
-import { Drink } from "../types";
+import { Drink } from "./types";
 
 export const drinks: Drink[] =
 ```
