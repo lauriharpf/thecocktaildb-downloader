@@ -24,7 +24,7 @@ export const writeToDisk = async (drinks: Drink[]): Promise<void> => {
 
 const write = (drinks: Drink[], filename: string) => {
   const drinksFile = fs.createWriteStream(filename);
-  drinksFile.write('import { Drink } from "types";\n');
+  drinksFile.write('import { Drink } from "./types";\n');
   drinksFile.write("\n");
   drinksFile.write(
     `export const drinks: Drink[] = ${JSON.stringify(drinks, null, 2)}`
