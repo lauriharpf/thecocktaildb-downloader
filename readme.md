@@ -6,7 +6,7 @@
 
 # How to get the data?
 
-For most uses, here are dumps of the data returned by TheCocktailDB API on the 28th of April, 2021:
+For most uses, here are dumps of the data returned by TheCocktailDB API on the 23rd of May, 2021:
 
 | File                                                                                                                                    | Content                                    |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
