@@ -1,3 +1,5 @@
+export type DataType = "drink" | "ingredient"
+
 export type CreativeCommonsConfirmed = "Yes" | "No";
 
 export type Alcoholic = "Alcoholic" | "Non alcoholic" | "Optional alcohol";
@@ -112,4 +114,13 @@ export interface Drink {
   strCreativeCommonsConfirmed: CreativeCommonsConfirmed;
   dateModified: string | null;
   thumbnailFilename: string | null;
+}
+
+export interface Ingredient {
+  idIngredient: string;
+  strABV: string | null;
+  strAlcohol: string;
+  strDescription: string | null;
+  strIngredient: string;
+  strType: string | null;
 }

@@ -10,7 +10,7 @@ For most uses, here are dumps of the data returned by TheCocktailDB API on the 2
 
 | Directory                                                                                                                           | Content                                                                                                                  |
 | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| **[without-images](https://github.com/lauriharpf/thecocktaildb-downloader/tree/master/thecocktaildb/src/generated/without-images)** | TypeScript typing (`types.ts`) and an array of all of the drinks (`drinks.ts`).                                          |
+| **[without-images](https://github.com/lauriharpf/thecocktaildb-downloader/tree/master/thecocktaildb/src/generated/without-images)** | TypeScript typing (`types.ts`) and an array of all of the drinks and ingredients (`drinks.ts` and `ingredients.ts`).                                          |
 | **[with-images](https://github.com/lauriharpf/thecocktaildb-downloader/tree/master/thecocktaildb/src/generated/with-images)**       | As above, but includes images of the drinks. The `thumbnailFilename` property in the drink points to the matching image. |
 
 Please [support TheCocktailDB](https://www.patreon.com/thedatadb) when using the data for commercial purposes.
