@@ -118,9 +118,9 @@ export interface Drink {
 
 export interface Ingredient {
   idIngredient: string;
-  strABV: string;
+  strABV: string | null;
   strAlcohol: string;
-  strDescription: string;
+  strDescription: string | null;
   strIngredient: string;
-  strType: string;
+  strType: string | null;
 }
