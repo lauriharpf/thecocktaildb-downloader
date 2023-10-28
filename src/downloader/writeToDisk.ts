@@ -1,33 +1,35 @@
 import * as fs from "fs";
-import { Drink } from "../../thecocktaildb/src/types";
+import { Drink, Ingredient } from "../../thecocktaildb/src/types";
+import { isDrink } from "./helper";
 
-export const writeToDisk = async (drinks: Drink[]): Promise<void> => {
-  write(drinks, "thecocktaildb/src/generated/with-images/drinks.ts");
-  fs.copyFileSync(
-    "thecocktaildb/src/types.ts",
-    "thecocktaildb/src/generated/with-images/types.ts"
-  );
+export const writeToDisk = async (items: (Drink | Ingredient)[]): Promise<void> => {
+  if (isDrink(items[0])) {
+    write(items, "thecocktaildb/src/generated/with-images/drinks.ts");
+    fs.copyFileSync(
+      "thecocktaildb/src/types.ts",
+      "thecocktaildb/src/generated/with-images/types.ts"
+    );
+  }
 
-  const withNullThumbnailFilename = drinks.map((drink) => ({
-    ...drink,
-    thumbnailFilename: null,
-  }));
   fs.copyFileSync(
     "thecocktaildb/src/types.ts",
     "thecocktaildb/src/generated/without-images/types.ts"
   );
   write(
-    withNullThumbnailFilename,
-    "thecocktaildb/src/generated/without-images/drinks.ts"
+    items,
+    `thecocktaildb/src/generated/without-images/${isDrink(items[0]) ? "drinks" : "ingredients"}.ts`
   );
 };
 
-const write = (drinks: Drink[], filename: string) => {
-  const drinksFile = fs.createWriteStream(filename);
-  drinksFile.write('import { Drink } from "./types";\n');
-  drinksFile.write("\n");
-  drinksFile.write(
-    `export const drinks: Drink[] = ${JSON.stringify(drinks, null, 2)}`
-  );
-  drinksFile.end();
+const write = (items: (Drink | Ingredient)[], filename: string) => {
+  const file = fs.createWriteStream(filename);
+  if (items.length > 0) {
+    const type = isDrink(items[0]) ? "Drink" : "Ingredient";
+    file.write(`import { ${type} } from "./types";\n`);
+    file.write("\n");
+    file.write(
+      `export const ${type.toLocaleLowerCase()}s: ${type}[] = ${JSON.stringify(items, null, 2)}`
+    );
+  }
+  file.end();
 };
